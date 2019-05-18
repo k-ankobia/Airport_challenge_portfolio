@@ -15,7 +15,8 @@ describe 'User Stories' do
 
   it ' so a plane can takeoff, instruct plane to takeoff' do 
     airport = Airport.new
-    plane = Plane.new
-    expect { airport.takeoff(plane) }.not_to raise_error
-  end
-end 
+    expect { airport.takeoff }.not_to raise_error
+  # end
+  end 
+
+end
