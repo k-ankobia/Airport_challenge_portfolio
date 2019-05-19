@@ -13,6 +13,8 @@ describe Airport do
 
     it 'can instruct a plane to takeoff' do 
     plane = double('it is a plane')
+    srand(100)
+    allow(airport).to receive(:stormy?).and_return false 
     airport.land(plane)
     airport.takeoff
     expect(airport.takeoff).to eq nil
