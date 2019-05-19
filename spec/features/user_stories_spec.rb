@@ -16,7 +16,12 @@ describe 'User Stories' do
   it ' so a plane can takeoff, instruct plane to takeoff' do 
     airport = Airport.new
     expect { airport.takeoff }.not_to raise_error
-  # end
   end 
 
+  it 'does not allow plane to land when weather is stormy' do 
+    airport = Airport.new
+    plane = Plane.new 
+    allow(airport).to receive(:stormy?).and_return true 
+    expect { airport.land(plane) }.to raise_error 'Cannot land plane: weather is stormy'
+  end
 end
