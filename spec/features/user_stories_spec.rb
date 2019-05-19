@@ -28,6 +28,9 @@ describe 'User Stories' do
   end
 
   it ' does not allow plane to land when airport is full' do 
+    srand(100)
+    5.times { airport.land(plane) }
+    expect { airport.land(plane) }.to raise_error 'Cannot land plane: Capacity is full'
   end
 
 end
