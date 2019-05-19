@@ -33,4 +33,8 @@ describe 'User Stories' do
     expect { airport.land(plane) }.to raise_error 'Cannot land plane: Capacity is full'
   end
 
+  it ' allows you to change the default capacity value' do 
+  airport.capacity = 6
+  expect(airport.capacity) == Airport::DEFAULT_CAPACITY
+  end
 end
